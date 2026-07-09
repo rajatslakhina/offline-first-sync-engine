@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788" systemVersion="24C101" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="body" optional="NO" attributeType="String" defaultValueString=""/>
+        <attribute name="deviceID" optional="NO" attributeType="String" defaultValueString=""/>
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDeleted" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="syncStatus" optional="NO" attributeType="String" defaultValueString="pending"/>
+        <attribute name="title" optional="NO" attributeType="String" defaultValueString=""/>
+        <attribute name="updatedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PendingOperationEntity" representedClassName="PendingOperationEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="awaitingUserDecision" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="deviceID" optional="NO" attributeType="String" defaultValueString=""/>
+        <attribute name="entityID" optional="NO" attributeType="String" defaultValueString=""/>
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="kind" optional="NO" attributeType="String" defaultValueString="create"/>
+        <attribute name="lastError" optional="YES" attributeType="String"/>
+        <attribute name="localTimestamp" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="nextRetryAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="payloadData" optional="NO" attributeType="Binary"/>
+        <attribute name="retryCount" optional="NO" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
